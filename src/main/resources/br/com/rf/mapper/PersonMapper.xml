@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="br.com.rf.mapper.PersonMapper" >
+
+    <select id="search" resultType="br.com.rf.domain.Person">
+        select * from person
+        <where>
+            <if test="firstName != null">
+                firstName = #{firstName}
+            </if>
+            <if test="lastName != null">
+                and lastName = #{lastName}
+            </if>
+            <if test="age != 0 and age != null">
+                and age = #{age}
+            </if>
+        </where>
+    </select>
+
+</mapper>
