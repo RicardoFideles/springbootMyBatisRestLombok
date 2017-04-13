@@ -43,7 +43,7 @@ public class Class01Application {
 			personMapper.search("John", null, 0).forEach(System.out::println);
 
 			System.out.println("-------->> SEARCH BY LASTNAME<<--------");
-			personMapper.search(null, "McClane", 0).forEach(System.out::println);
+			personMapper.search("John", "McClane", 0).forEach(System.out::println);
 
 			System.out.println("-------->> SEARCH BY FIRSTNAME AND AGE<<--------");
 			personMapper.search("John", null, 65).forEach(System.out::println);
